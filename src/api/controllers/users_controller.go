@@ -8,8 +8,10 @@ import (
 	"../responses"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/mux"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 )
 
 func GetUsers(w http.ResponseWriter, _ *http.Request) {
@@ -71,7 +73,31 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 
 }
 func GetUser(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("An User"))
+
+	vars := mux.Vars(r)
+
+	uid, err := strconv.ParseUint(vars["id"], 10, 64)
+	if err != nil {
+		responses.ERROR(w, http.StatusBadRequest, err)
+		return
+	}
+	db, err := database.Connect()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+
+	repo := crud.NewRepositoryUsersCRUD(db)
+
+	func (usersRepository repository.UserRepository) {
+		user, err := usersRepository.FindById(uid)
+		if err != nil {
+			responses.ERROR(w, http.StatusUnprocessableEntity, err)
+			return
+		}
+		responses.JSON(w, http.StatusOK, user)
+	}(repo)
 }
 func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("Update User"))

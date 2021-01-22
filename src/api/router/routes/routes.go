@@ -28,7 +28,8 @@ func SetupRoutesWithMiddlewares(r *mux.Router) *mux.Router {
 		r.HandleFunc(
 			route.Uri,
 			middlewares.SetMiddlewareLogger(
-				middlewares.SetMiddlewareJSON(route.Handler)),
+				middlewares.SetMiddlewareJSON(route.Handler),
+			),
 		).Methods(route.Method)
 	}
 	return r
