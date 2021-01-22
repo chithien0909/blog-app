@@ -1,6 +1,29 @@
-hash: 15c1083dc062f94e8a0ce50a2faf8db76b01c00ab9d5440a50a91b6a241477d4
-updated: 2021-01-21T07:59:19.110165+07:00
+hash: c1f5a074a57aa60e7aa5c6cc32eea9b0f6bc64d5de6e1e451e746f14b97e6389
+updated: 2021-01-22T12:05:29.66986+07:00
 imports:
+- name: github.com/go-sql-driver/mysql
+  version: a341cd15c45e4cdae93421b02834fdadf61e5e18
 - name: github.com/gorilla/mux
   version: d07530f46e1eec4e40346e24af34dcc6750ad39f
+- name: github.com/jinzhu/inflection
+  version: b5281034e75ed100658f8d9d0b2837f3fad4e8b3
+- name: github.com/jinzhu/now
+  version: 4d745f0c387c1e37c21cf1250cb37c2355607b55
+- name: github.com/joho/godotenv
+  version: f562099a4320c6cf2a806734921872cbe57ad585
+- name: golang.org/x/crypto
+  version: eec23a3978adcfd26c29f4153eaa3e3d9b2cc53a
+  subpackages:
+  - bcrypt
+- name: gorm.io/driver/mysql
+  version: 5484d257d10d4f2e820c5773481efe961069333a
+- name: gorm.io/gorm
+  version: 35ebfe68740ef8d1ff3fde2037fbba34d802e287
+  subpackages:
+  - callbacks
+  - clause
+  - logger
+  - migrator
+  - schema
+  - utils
 testImports: []

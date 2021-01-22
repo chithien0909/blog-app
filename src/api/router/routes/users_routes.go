@@ -7,7 +7,7 @@ var usersRoutes = []Route{
 	{
 		Uri:    "/users",
 		Method: http.MethodGet,
-		Handler: controllers.GetUser,
+		Handler: controllers.GetUsers,
 	},
 	{
 		Uri:    "/users",

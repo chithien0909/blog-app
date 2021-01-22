@@ -1,3 +1,8 @@
 package: .
 import:
 - package: github.com/gorilla/mux
+- package: github.com/joho/godotenv
+- package: gorm.io/gorm
+- package: golang.org/x/crypto
+  subpackages:
+  - bcrypt

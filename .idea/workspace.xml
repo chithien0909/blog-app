@@ -2,6 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8cfbb9-3461-497a-823e-bbcb2411f273" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/controllers/users_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.lock" beforeDir="false" afterPath="$PROJECT_DIR$/glide.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/glide.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/controllers/users.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/router/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/router/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/router/routes/users_routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/router/routes/users_routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blog_server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog_server/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blogpb/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blogpb/blog.proto" afterDir="false" />
     </list>
@@ -19,7 +28,7 @@
   </component>
   <component name="GOROOT" url="file:///usr/local/go" />
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nLB3VRqlJeyKRFOO5HEOVcxmqd" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,6 +44,13 @@
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/api/middlewares" />
+      <recent name="$PROJECT_DIR$/src/api/repository/crud" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
