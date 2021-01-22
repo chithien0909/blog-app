@@ -31,3 +31,20 @@ func (r *repositoryUsersCRUD) Save(user models.User) (models.User, error) {
 	}
 	return models.User{}, err
 }
+func (r *repositoryUsersCRUD) FindAll() ([]models.User, error) {
+	var err error
+	done := make(chan bool)
+	var users []models.User
+	go func(ch chan<- bool) {
+		err = r.db.Debug().Model(&models.User{}).Limit(100).Find(&users).Error
+		if err != nil {
+			ch <- false
+			return
+		}
+		ch <- true
+	}(done)
+	if channels.OK(done) {
+		return users, nil
+	}
+	return nil, err
+}

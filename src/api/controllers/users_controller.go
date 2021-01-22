@@ -12,8 +12,25 @@ import (
 	"net/http"
 )
 
-func GetUsers(w http.ResponseWriter, r *http.Request) {
-	w.Write([]byte("List users"))
+func GetUsers(w http.ResponseWriter, _ *http.Request) {
+	db, err := database.Connect()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+
+	repo := crud.NewRepositoryUsersCRUD(db)
+
+	func (usersRepository repository.UserRepository) {
+		users, err := usersRepository.FindAll()
+		if err != nil {
+			responses.ERROR(w, http.StatusUnprocessableEntity, err)
+			return
+		}
+		responses.JSON(w, http.StatusOK, users)
+	}(repo)
+
 }
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 	body, err := ioutil.ReadAll(r.Body)

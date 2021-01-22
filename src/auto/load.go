@@ -2,8 +2,7 @@ package auto
 
 import (
 	"../api/database"
-	"../api/models"
-	"../api/utils/console"
+	_ "../api/utils/console"
 	"log"
 )
 
@@ -19,21 +18,21 @@ func Load()  {
 	defer sqlDB.Close()
 
 	// Drop table if exists
-	err = db.Debug().Migrator().DropTable(&models.User{})
-	if err != nil {
-		log.Fatalf("Drop table if existed failed: %v\n", err)
-	}
+	//err = db.Debug().Migrator().DropTable(&models.User{})
+	//if err != nil {
+	//	log.Fatalf("Drop table if existed failed: %v\n", err)
+	//}
 	// Create table, missing foreign keys, constraints, columns and indexes
 	// It WON’T delete unused columns to protect your data.
-	err = db.Debug().AutoMigrate(&models.User{})
-	if err != nil {
-		log.Fatalf("Drop table if existed failed: %v\n", err)
-	}
-	for _, user := range users {
-		err = db.Debug().Model(&models.User{}).Create(&user).Error
-		if err != nil {
-			log.Fatal(err)
-		}
-		console.Pretty(user)
-	}
+	//err = db.Debug().AutoMigrate(&models.User{})
+	//if err != nil {
+	//	log.Fatalf("Drop table if existed failed: %v\n", err)
+	//}
+	//for _, user := range users {
+	//	err = db.Debug().Model(&models.User{}).Create(&user).Error
+	//	if err != nil {
+	//		log.Fatal(err)
+	//	}
+	//	console.Pretty(user)
+	//}
 }
