@@ -11,9 +11,11 @@
       <change beforePath="$PROJECT_DIR$/data/mysql.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/data/mysql.ibd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/undo_001" beforeDir="false" afterPath="$PROJECT_DIR$/data/undo_001" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/undo_002" beforeDir="false" afterPath="$PROJECT_DIR$/data/undo_002" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/controllers/users_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/controllers/users_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/repository/crud/repository_users_crud.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/repository/crud/repository_users_crud.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/repository/repository_users.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/repository/repository_users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.lock" beforeDir="false" afterPath="$PROJECT_DIR$/glide.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/glide.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/models/Users.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/models/Users.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auto/data.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/auto/data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auto/load.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/auto/load.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blog_server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog_server/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blogpb/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blogpb/blog.proto" afterDir="false" />
     </list>

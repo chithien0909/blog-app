@@ -1,6 +1,8 @@
-hash: c1f5a074a57aa60e7aa5c6cc32eea9b0f6bc64d5de6e1e451e746f14b97e6389
-updated: 2021-01-22T12:05:29.66986+07:00
+hash: b3eb9c317ae9f97cc9d0a00b85aae8e6d1c541295e76ff0994be77d7d763d39f
+updated: 2021-01-23T13:54:48.27169+07:00
 imports:
+- name: github.com/badoux/checkmail
+  version: 85ee8a774dbb3c0c2aafc5159dfec21f67112ddb
 - name: github.com/go-sql-driver/mysql
   version: a341cd15c45e4cdae93421b02834fdadf61e5e18
 - name: github.com/gorilla/mux
@@ -15,6 +17,7 @@ imports:
   version: eec23a3978adcfd26c29f4153eaa3e3d9b2cc53a
   subpackages:
   - bcrypt
+  - blowfish
 - name: gorm.io/driver/mysql
   version: 5484d257d10d4f2e820c5773481efe961069333a
 - name: gorm.io/gorm
