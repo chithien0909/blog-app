@@ -8,3 +8,5 @@ import:
   - bcrypt
 - package: github.com/badoux/checkmail
   version: ^1.2.1
+- package: github.com/dgrijalva/jwt-go
+  version: ^4.0.0-preview1

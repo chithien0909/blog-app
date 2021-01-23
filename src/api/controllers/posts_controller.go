@@ -22,6 +22,14 @@ func GetPosts(w http.ResponseWriter, _ *http.Request) {
 		return
 	}
 
+	sql, err := db.DB()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+	defer sql.Close()
+
 	repo := crud.NewRepositoryPostsCRUD(db)
 
 	func (postsRepository repository.PostRepository) {
@@ -63,6 +71,14 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	sql, err := db.DB()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+	defer sql.Close()
+
 	repo := crud.NewRepositoryPostsCRUD(db)
 
 	func (postsRepository repository.PostRepository) {
@@ -90,6 +106,14 @@ func GetPost(w http.ResponseWriter, r *http.Request) {
 		responses.ERROR(w, http.StatusInternalServerError, err)
 		return
 	}
+
+	sql, err := db.DB()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+	defer sql.Close()
 
 	repo := crud.NewRepositoryPostsCRUD(db)
 
@@ -132,6 +156,14 @@ func UpdatePost(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	sql, err := db.DB()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+	defer sql.Close()
+
 	repo := crud.NewRepositoryPostsCRUD(db)
 	func (postsRepository repository.PostRepository) {
 		rowEffect, err := postsRepository.Update(uid, post)
@@ -157,6 +189,14 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 		responses.ERROR(w, http.StatusInternalServerError, err)
 		return
 	}
+
+	sql, err := db.DB()
+
+	if err != nil {
+		responses.ERROR(w, http.StatusInternalServerError, err)
+		return
+	}
+	defer sql.Close()
 
 	repo := crud.NewRepositoryPostsCRUD(db)
 	func (postsRepository repository.PostRepository) {

@@ -9,6 +9,7 @@ import (
 
 func Connect() (*gorm.DB, error) {
 	db, err := gorm.Open(mysql.Open(config.DB_URL), &gorm.Config{})
+
 	if err != nil {
 		return nil, err
 	}

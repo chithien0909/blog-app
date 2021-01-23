@@ -1,8 +1,10 @@
-hash: b3eb9c317ae9f97cc9d0a00b85aae8e6d1c541295e76ff0994be77d7d763d39f
-updated: 2021-01-23T13:54:48.27169+07:00
+hash: 87bf564973703af62a65e7470c2caa21698f2a965529bcc799ece6e59fe1a8f9
+updated: 2021-01-23T20:51:01.495191+07:00
 imports:
 - name: github.com/badoux/checkmail
   version: 85ee8a774dbb3c0c2aafc5159dfec21f67112ddb
+- name: github.com/dgrijalva/jwt-go
+  version: a58974ee87a68abcf6cfb2315224e89135cf3311
 - name: github.com/go-sql-driver/mysql
   version: a341cd15c45e4cdae93421b02834fdadf61e5e18
 - name: github.com/gorilla/mux

@@ -2,12 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac8cfbb9-3461-497a-823e-bbcb2411f273" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/blogos/users.ibd" beforeDir="false" afterPath="$PROJECT_DIR$/data/blogos/users.ibd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.lock" beforeDir="false" afterPath="$PROJECT_DIR$/glide.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/glide.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/glide.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/controllers/posts_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/controllers/posts_controller.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/controllers/users_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/controllers/users_controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/models/Post.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/models/Post.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/database/db.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/database/db.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/models/Users.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/models/Users.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/router/routes/routes.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/router/routes/routes.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/auto/data.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/auto/data.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/config.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blog_server/server.go" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blog_server/server.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../blog/blogpb/blog.proto" beforeDir="false" afterPath="$PROJECT_DIR$/../blog/blogpb/blog.proto" afterDir="false" />
     </list>
