@@ -30,7 +30,7 @@ func (u *User) BeforeSave(tx *gorm.DB) error  {
 }
 
 
-func (u *User) Prepare(tx *gorm.DB) {
+func (u *User) Prepare() {
 	u.ID = 0
 	u.Nickname = html.EscapeString(strings.TrimSpace(u.Nickname))
 	u.Email = html.EscapeString(strings.TrimSpace(u.Email))
@@ -38,18 +38,32 @@ func (u *User) Prepare(tx *gorm.DB) {
 	u.UpdatedAt = time.Now()
 }
 
-func (u *User) Validate(tx *gorm.DB) error {
-	if u.Nickname == "" {
-		return errors.New("required nickname")
+func (u *User) Validate(action string) error {
+	switch strings.ToLower(action) {
+		case "update":
+			if u.Nickname == "" {
+				return errors.New("required nickname")
+			}
+			if u.Email == "" {
+				return errors.New("required email")
+			}
+			if err := checkmail.ValidateFormat(u.Email); err != nil {
+				return errors.New("invalid email")
+			}
+			return nil
+		default:
+			if u.Nickname == "" {
+				return errors.New("required nickname")
+			}
+			if u.Password == "" {
+				return errors.New("required password")
+			}
+			if u.Email == "" {
+				return errors.New("required email")
+			}
+			if err := checkmail.ValidateFormat(u.Email); err != nil {
+				return errors.New("invalid email")
+			}
+			return nil
 	}
-	if u.Password == "" {
-		return errors.New("required password")
-	}
-	if u.Email == "" {
-		return errors.New("required email")
-	}
-	if err := checkmail.ValidateFormat(u.Email); err != nil {
-			return errors.New("invalid email")
-	}
-	return nil
 }

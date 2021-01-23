@@ -50,7 +50,12 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		responses.ERROR(w, http.StatusUnprocessableEntity, err)
 		return
 	}
-
+	user.Prepare()
+	err = user.Validate("")
+	if err != nil {
+		responses.ERROR(w, http.StatusUnprocessableEntity, err)
+		return
+	}
 	db, err := database.Connect()
 
 	if err != nil {
@@ -115,7 +120,8 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	}
 	user := models.User{}
 	err = json.Unmarshal(body, &user)
-
+	user.Prepare()
+	err = user.Validate("update")
 	if err != nil {
 		responses.ERROR(w, http.StatusUnprocessableEntity, err)
 		return

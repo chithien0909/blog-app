@@ -13,7 +13,9 @@ type Route struct {
 }
 
 func Load() []Route{
-	return usersRoutes
+	routes := usersRoutes
+	routes = append(routes, postsRoutes...)
+	return routes
 }
 
 func SetupRoutes(r *mux.Router) *mux.Router {
