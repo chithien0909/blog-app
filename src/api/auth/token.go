@@ -38,6 +38,7 @@ func TokenValid(r *http.Request) error {
 		return err
 	}
 	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		fmt.Println("")
 		console.Pretty(claims)
 	}
 	return nil
