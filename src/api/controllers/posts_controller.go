@@ -8,6 +8,7 @@ import (
 	"../repository/crud"
 	"../responses"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/gorilla/mux"
 	"io/ioutil"
@@ -65,6 +66,18 @@ func CreatePost(w http.ResponseWriter, r *http.Request) {
 		responses.ERROR(w, http.StatusUnprocessableEntity, err)
 		return
 	}
+
+	uid, err := auth.ExtractTokenID(r)
+
+	if err != nil {
+		responses.ERROR(w, http.StatusUnauthorized, err)
+		return
+	}
+	if uid != post.AuthorID {
+		responses.ERROR(w, http.StatusUnauthorized, errors.New(http.StatusText(http.StatusUnauthorized)))
+		return
+	}
+
 	db, err := database.Connect()
 
 	if err != nil {
@@ -208,7 +221,7 @@ func DeletePost(w http.ResponseWriter, r *http.Request) {
 
 	repo := crud.NewRepositoryPostsCRUD(db)
 	func (postsRepository repository.PostRepository) {
-		_, err := postsRepository.Delete(pid)
+		_, err := postsRepository.Delete(pid, uid)
 		if err != nil {
 			responses.ERROR(w, http.StatusUnprocessableEntity, err)
 			return

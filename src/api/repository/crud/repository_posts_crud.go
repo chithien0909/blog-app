@@ -118,12 +118,12 @@ func (r *repositoryPostsCRUD) Update(pid uint64, post models.Post) (int64, error
 	return 0, rs.Error
 }
 
-func (r *repositoryPostsCRUD) Delete(uid uint64) (int64, error) {
+func (r *repositoryPostsCRUD) Delete(pid uint64, uid uint64 ) (int64, error) {
 	var rs  *gorm.DB
 	done := make(chan bool)
 	go func(ch chan<- bool) {
 		defer close(ch)
-		rs = r.db.Debug().Model(&models.Post{}).Where("id = ?", uid).Delete(&models.Post{})
+		rs = r.db.Debug().Model(&models.Post{}).Where("id = ? AND author_id = ?", pid, uid).Delete(&models.Post{})
 		ch <- true
 	}(done)
 	if channels.OK(done) {

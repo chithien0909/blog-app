@@ -1,12 +1,14 @@
 package controllers
 
 import (
+	"../auth"
 	"../database"
 	"../models"
 	"../repository"
 	"../repository/crud"
 	"../responses"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/gorilla/mux"
 	"io/ioutil"
@@ -144,6 +146,18 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	}
 	user := models.User{}
 	err = json.Unmarshal(body, &user)
+	tokenUserId, err := auth.ExtractTokenID(r)
+
+	if err != nil {
+		responses.ERROR(w, http.StatusUnauthorized, err)
+		return
+	}
+
+	if tokenUserId != user.ID {
+		responses.ERROR(w, http.StatusUnauthorized, errors.New(http.StatusText(http.StatusUnauthorized)))
+		return
+	}
+
 	user.Prepare()
 	err = user.Validate("update")
 	if err != nil {
@@ -182,6 +196,18 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	uid, err := strconv.ParseUint(vars["id"], 10, 64)
 	if err != nil {
 		responses.ERROR(w, http.StatusBadRequest, err)
+		return
+	}
+
+
+	tokenUserId, err := auth.ExtractTokenID(r)
+	if err != nil {
+		responses.ERROR(w, http.StatusUnauthorized, err)
+		return
+	}
+
+	if tokenUserId != uid {
+		responses.ERROR(w, http.StatusUnauthorized, errors.New(http.StatusText(http.StatusUnauthorized)))
 		return
 	}
 
